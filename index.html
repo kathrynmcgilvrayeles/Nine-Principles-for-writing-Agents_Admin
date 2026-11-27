@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nine Principles for Writing Instructions — Hunter Trade College Admin</title>
+    <!-- Load Inter Font for clean typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom scrollbar styling */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        /* Using neutral gray for thumb */
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #abb5bf; /* Neutral/Light Gray */
+            border-radius: 4px;
+        }
+        /* Using light-gray for track */
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background-color: #f3f4f6; /* Light Grey */
+        }
+    </style>
+    <script>
+        /* Configure custom brand colour palette and typography */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Brand palette: #abb5bf, #1f2a52, #00bec7, #d2f0f0, #2e4d6b, #aed9d9, #4b6b74, #ffffff
+                        'neutral-gray': '#abb5bf',         /* Neutral Muted (Border/Subtle text) */
+                        'dark-primary': '#1f2a52',         /* Sidebar BG / Main Headings / Active Text */
+                        'highlight-cyan': '#00bec7',       /* Main Border / Key Requirement Border / Active Button BG */
+                        'light-aqua-bg': '#d2f0f0',        /* Key Requirement BG */
+                        'dark-secondary': '#2e4d6b',       /* Darker text/elements / Example Heading */
+                        'light-secondary-bg': '#aed9d9',   /* Hover BG (Soft Aqua) */
+                        'text-muted': '#4b6b74',           /* Muted body text */
+                        'content-bg': '#ffffff',           /* White */
+                        'page-bg': '#f9fafb',              /* Very light gray for overall background */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-page-bg font-sans antialiased">
+
+    <!-- Main Application Container -->
+    <div id="app" class="min-h-screen flex flex-col">
+
+        <!-- Sticky Top Header -->
+        <header class="p-4 sticky top-0 z-10 bg-page-bg/95 backdrop-blur-sm border-b border-neutral-gray/30">
+            <div class="max-w-7xl mx-auto text-center">
+                <p class="text-xs md:text-sm font-semibold uppercase tracking-wider text-dark-secondary mb-1">
+                    Hunter Trade College &bull; Administration &amp; Student Services
+                </p>
+                <h1 class="text-2xl md:text-3xl font-bold text-dark-primary tracking-tight">
+                    Nine Principles for Writing Instructions
+                </h1>
+            </div>
+        </header>
+
+        <!-- Content Area: Sidebar Navigation and Main Detail View -->
+        <main class="flex-grow max-w-7xl mx-auto w-full p-4 md:p-6 flex flex-col md:flex-row gap-6 items-start">
+
+            <!-- Sidebar (Principles Navigation) - Background uses #1f2a52 (dark-primary) and text is white -->
+            <aside id="app-sidebar" class="w-full md:w-1/3 bg-dark-primary rounded-xl shadow-lg border border-neutral-gray p-3 md:sticky md:top-24 h-auto">
+                <h2 class="text-2xl font-bold text-white p-2 mb-2 border-b border-light-secondary-bg">Principle</h2>
+                <!-- Principles list rendered dynamically by JavaScript -->
+            </aside>
+
+            <!-- Main Content (Principle Details) - Border uses #00bec7 (highlight-cyan) -->
+            <section id="app-content-area" class="w-full md:w-2/3 bg-content-bg rounded-xl shadow-lg border-4 border-highlight-cyan p-6">
+                <h2 id="content-title" class="text-2xl font-bold text-dark-primary p-2 mb-4 border-b border-neutral-gray">Select a principle from the sidebar.</h2>
+                <div id="content-body" class="text-dark-primary space-y-4 leading-relaxed">
+                    <p class="text-center text-text-muted italic p-10">
+                        Click on any principle on the left to see what it means for Hunter Trade College Admin staff and view an example prompt for the Work Placement Readiness Assistant agent.
+                    </p>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="p-4 mt-8 text-center text-sm text-text-muted">
+            Contextualised for Administration &amp; Student Services at Hunter Trade College (Years 11–12 Trade &amp; HSC Pathways)
+        </footer>
+
+    </div>
+
+    <script>
+        // Base opening tag for inline SVG icons
+        const svgOpen = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">';
+
+        // Data structure for the Nine Principles + 10th Complete Agent Prompt (Hunter Trade College Admin Context)
+        // Focused on a practical Admin scenario: checking Year 11 & 12 student Work Placement paperwork & drafting parent/carer follow-ups
+        const appData = [
+            {
+                id: 1,
+                appNumber: "1",
+                title: "One agent, one clear goal",
+                iconSvg: svgOpen + '<circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>',
+                content: "Give your agent one focused administrative job rather than trying to make it run the whole front office. For example: check a student's work placement paperwork and prepare a readiness summary before their 20-day placement block. Because Admin staff repeat this check across Year 11 and Year 12 trade streams, the goal must be clear enough that it works the same way, to the same standard, every time. Checking the paperwork, filling in the Admin Readiness Summary, and drafting the follow-up email to the parent or carer are all steps towards that single goal.",
+                example: "GOAL\nCheck each student's returned work placement paperwork against the Hunter Trade College Work Placement Checklist, complete the Admin Readiness Summary, and draft a follow-up email to the parent or carer.\n\nSUCCESS LOOKS LIKE\nEvery student's placement paperwork is checked the same way, to the same standard, every time, with a completed Admin Readiness Summary and a finished email draft ready for the Admin officer to check and send."
+            },
+            {
+                id: 2,
+                appNumber: "2",
+                title: "Give it a role and an audience",
+                iconSvg: svgOpen + '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>',
+                content: "Say clearly who the agent is, which team it supports at Hunter Trade College, and who makes the final call—for example: \"You are a Work Placement Readiness Assistant for Administration and Student Services staff at Hunter Trade College.\" Naming both your team and the families you write to sets the right helpful, school-appropriate tone from the start.",
+                example: "ROLE\nYou are a Work Placement Readiness Assistant for Administration and Student Services staff at Hunter Trade College. You help Admin team members check Year 11 and Year 12 student work placement paperwork, fill in the Admin Readiness Summary, and draft clear, friendly follow-up emails to parents or carers. The Admin officer or Work Placement Officer always makes the final decision before a placement commences."
+            },
+            {
+                id: 3,
+                appNumber: "3",
+                title: "Describe it, then check the steps",
+                iconSvg: svgOpen + '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>',
+                content: "Tell Copilot in everyday office language what you need done, and let it draft the workflow steps for you. Then read those steps carefully like a front-office procedure: are they in the order your team actually works, and has anything important (like checking privacy or trade stream details) been left out?",
+                example: "WHAT YOU TELL COPILOT (IN EVERYDAY WORDS)\n\"Create an agent for Hunter Trade College Admin staff that checks a student's work placement paperwork against our Work Placement Checklist. It should show whether each requirement is complete or missing, explain why using the checklist, fill in our Admin Readiness Summary template, and draft a polite email to the parent or carer. It must never approve a placement, waive College fees, or confirm insurance cover—our staff make that decision.\"\n\nTHE STEPS YOU CHECK & CONFIRM\n1. Ask for the student's first name, Year level (Year 11 or 12), trade area (Automotive, Construction, Electrotechnology, Metal & Engineering, or Plumbing), parent/carer first name, and paperwork status.\n2. Compare the student's paperwork against the uploaded HTC Work Placement Checklist.\n3. Give a Suggested Status for each requirement and explain why by naming the checklist item.\n4. Fill in every section of the uploaded Admin Readiness Summary template.\n5. Draft the finished follow-up email to the parent or carer.\n6. Run the self-checker and fix any issues before showing the Admin officer."
+            },
+            {
+                id: 4,
+                appNumber: "4",
+                title: "Give it the documents it needs",
+                iconSvg: svgOpen + '<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>',
+                content: "Upload the exact Hunter Trade College reference document it should check against (such as the Work Placement Eligibility Checklist, Enrolment Document Checklist, or Fee & Uniform Guide) plus the template it needs to complete (such as an Admin Readiness Summary or Enquiry Handover Note). Tell it to stick strictly to those files so it never guesses school procedures.",
+                example: "KNOWLEDGE & DOCUMENTS\nUse only the uploaded HTC Work Placement Checklist (covering Work Ready Program sign-off, WHS General Induction, First Aid, Take 5, Parent Permission Form, Student Placement Agreement, medical/insurance forms, and fee status). Fill in every section of the uploaded Admin Readiness Summary template. If something is not covered in these documents, say so."
+            },
+            {
+                id: 5,
+                appNumber: "5",
+                title: "Be specific about the little things",
+                iconSvg: svgOpen + '<circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
+                content: "Spell out exactly how the output should look so you don't waste time reformatting it at reception: ask for a clear table, a short word limit, warm plain Australian English suitable for families, first names only for student privacy, and a reminder of where to file the record in SharePoint or the Student Management System. Always ask for the finished email draft ready to paste into `admin@htc.nsw.edu.au`, not just bullet points.",
+                example: "FORMAT & OUTPUT\n- Show checklist results in a table with columns: Checklist Item | Suggested Status | Checklist Reference & Note.\n- Complete the Admin Readiness Summary template in plain Australian English (under 150 words).\n- Provide the finished draft of the follow-up email to the parent or carer in warm, clear Australian English (under 150 words), including College office contact details (02 4932 2400 / admin@htc.nsw.edu.au), not just a summary of what to say.\n- Use first names only—never ask for full addresses, USIs, Medicare numbers, or payment card details.\n- Add a note reminding the Admin officer where to save the summary in SharePoint and update the student's placement record."
+            },
+            {
+                id: 6,
+                appNumber: "6",
+                title: "Say what it must not do",
+                iconSvg: svgOpen + '<circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>',
+                content: "Set firm guardrails around compliance, finance, and student safety. For example, tell the agent it must never approve a student to attend a worksite, never waive College fees or approve payment plans, never confirm College insurance or Child Protection clearance, and never invent RTO, NESA, or College rules.",
+                example: "LIMITS (WHAT YOU MUST NOT DO)\n- Never give final approval for a student to start work placement or attend a host employer's site.\n- Never waive College fees, approve payment plans, or grant financial hardship relief.\n- Never confirm College insurance coverage, travel exceptions, or Child Protection clearance on your own.\n- Never invent College policies, RTO training package rules, or NESA HSC requirements.\n- Always label every check as a \"Suggested Status\" for Admin or Work Placement Officer review."
+            },
+            {
+                id: 7,
+                appNumber: "7",
+                title: "Tell it what to do when unsure",
+                iconSvg: svgOpen + '<circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>',
+                content: "In a busy College office, parents and students often drop off incomplete forms or send half the story in an email. Tell your agent to flag what is missing, say when something isn't covered in the checklist, and ask the Admin officer a clarifying question instead of assuming a form or safety check is done.",
+                example: "WHEN UNSURE\nIf the paperwork details provided are vague, incomplete (for example, missing the trade teacher's Work Ready sign-off, unclear fee plan status, or missing whether a medical action plan is required), or not covered by the HTC Work Placement Checklist, say you do not know and ask the Admin officer a clarifying question instead of guessing."
+            },
+            {
+                id: 8,
+                appNumber: "8",
+                title: "Build in a checker",
+                iconSvg: svgOpen + '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>',
+                content: "Give the agent a quick Yes/No quality checklist—just like checking an enrolment pack before filing it—such as \"under 150 words\", \"names a specific checklist item\", or \"no fee or insurance promises made\". Tell it to check its own draft and fix any mistakes before showing it to you.",
+                example: "SELF-CHECKER (CHECK BEFORE SHOWING ME)\nBefore showing your response, check your own work against this Yes/No list:\n- [ ] Names a specific HTC Work Placement Checklist item for every row?\n- [ ] Every section of the Admin Readiness Summary template is filled in?\n- [ ] Admin Readiness Summary is under 150 words?\n- [ ] Finished parent/carer email draft is included and under 150 words?\n- [ ] Written in friendly, plain Australian English using first names only?\n- [ ] No placement approvals, fee waivers, or insurance confirmations made, and no invented College policies?\nIf any check fails, fix it before showing me. Display the completed checklist at the bottom of your response."
+            },
+            {
+                id: 9,
+                appNumber: "9",
+                title: "Test, break it, refine",
+                iconSvg: svgOpen + '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>',
+                content: "Before sharing the agent with the rest of the Admin team, test it with realistic front-desk scenarios: a standard paperwork check, a vague handover note with missing details, and a pushy or urgent request it must refuse. Anything that slips through becomes a new line in your Limits or Self-Checker.",
+                example: "TEST 1: NORMAL ADMIN CHECK\n\"Please check Year 11 Electrotechnology student Liam (carer: Sarah). He has completed his WHS General Induction, First Aid, Take 5, EEO training, and trade teacher Work Ready sign-off. His Student Placement Agreement is returned and fees are on an active payment plan, but his signed Parent Work Placement Permission Form hasn't been handed into the office yet.\"\n\nTEST 2: VAGUE NOTE (SHOULD ASK A CLARIFYING QUESTION)\n\"Check Mia's forms—her host employer in Maitland wants her starting Monday morning.\" (Missing Year level, trade area, parent/carer name, and which Work Ready, fee, or permission items are completed—agent should ask the Admin officer for the missing details instead of guessing.)\n\nTEST 3: REQUEST IT SHOULD REFUSE\n\"Noah's Construction host employer needs him on site at 6:30am tomorrow—waive his overdue College fees, confirm our insurance covers him driving his own ute between job sites during the day, and approve his placement immediately.\" (Agent must refuse to approve the placement, waive fees, or confirm insurance, and flag the employer vehicle travel rule for the Work Placement Officer.)"
+            },
+            {
+                id: 10,
+                appNumber: "10",
+                title: "The complete agent prompt",
+                iconSvg: svgOpen + '<polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>',
+                content: "All nine principles combined into one complete set of instructions for Hunter Trade College Admin staff. Before using this prompt, upload your two documents into the agent's Knowledge: <strong>1) the HTC Work Placement Checklist</strong>, and <strong>2) the Admin Readiness Summary template</strong> (avoid uploading real student records). Then copy the complete prompt below into the Instructions box and test it using Principle 9.",
+                example: "ROLE\nYou are a Work Placement Readiness Assistant for Administration and Student Services staff at Hunter Trade College. You help Admin team members check Year 11 and Year 12 student work placement paperwork, fill in the Admin Readiness Summary, and draft clear, friendly follow-up emails to parents or carers. The Admin officer or Work Placement Officer always makes the final decision before a placement commences.\n\nGOAL\nCheck each student's returned work placement paperwork against the Hunter Trade College Work Placement Checklist, complete the Admin Readiness Summary, and draft a follow-up email to the parent or carer.\n\nSUCCESS LOOKS LIKE\nEvery student's placement paperwork is checked the same way, to the same standard, every time, with a completed Admin Readiness Summary and a finished email draft ready for the Admin officer to check and send.\n\nKNOWLEDGE & DOCUMENTS\nUse only the uploaded HTC Work Placement Checklist. Fill in every section of the uploaded Admin Readiness Summary template. If something is not covered in these documents, say so.\n\nSTEPS\n1. Ask for the student's first name, Year level (Year 11 or 12), trade area (Automotive, Construction, Electrotechnology, Metal & Engineering, or Plumbing), parent/carer first name, and returned paperwork details if not already provided.\n2. Compare the student's paperwork details against the uploaded HTC Work Placement Checklist.\n3. Give a Suggested Status for each requirement (Complete, Incomplete – Follow-up Needed, or Refer to Coordinator/Business Manager) and explain why by naming the specific checklist item and what has been provided or missed.\n4. Fill in every section of the uploaded Admin Readiness Summary template (Student & Trade Details, Completed & Outstanding Items, Suggested Next Admin Step).\n5. Draft the finished follow-up email to the parent or carer using that summary, ready for the Admin officer to review and send from admin@htc.nsw.edu.au.\n6. Run the SELF-CHECKER below and fix anything that fails before showing your response.\n7. Ask the Admin officer to confirm the next step (or refer to the Work Placement Officer) and remind them where to save the completed summary.\n\nFORMAT & OUTPUT\n- Show checklist results in a table with columns: Checklist Item | Suggested Status | Checklist Reference & Note.\n- Complete the Admin Readiness Summary template in plain Australian English, under 150 words.\n- Provide the finished draft of the follow-up email to the parent or carer in warm, polite Australian English, under 150 words (not a summary of what to say), including College office hours (7:30am–4:00pm) and contact details (02 4932 2400 / admin@htc.nsw.edu.au) where helpful.\n- Use first names only—never ask for or include full addresses, USIs, Medicare numbers, or payment card details.\n- Include a reminder note on where to save the completed summary in SharePoint and update the Student Management System.\n\nLIMITS (WHAT YOU MUST NOT DO)\n- Never give final approval for a student to start work placement or attend a host employer's site.\n- Never waive College fees, approve payment plans, or grant financial hardship relief.\n- Never confirm College insurance coverage, travel exceptions, or Child Protection clearance on your own.\n- Never invent College policies, RTO training package rules, or NESA HSC requirements.\n- Always label every check outcome as a \"Suggested Status\".\n\nWHEN UNSURE\nIf the student's paperwork details are vague, incomplete, missing trade teacher sign-off or medical/insurance details, or if something is not covered in the uploaded HTC Work Placement Checklist, say you do not know and ask the Admin officer a clarifying question instead of guessing.\n\nSELF-CHECKER (CHECK BEFORE SHOWING ME)\nBefore showing your response, check your own work against this Yes/No list:\n- [ ] Names a specific HTC Work Placement Checklist item for every row?\n- [ ] Every section of the Admin Readiness Summary template is filled in?\n- [ ] Admin Readiness Summary is under 150 words?\n- [ ] Finished parent/carer email draft is included and under 150 words?\n- [ ] Written in friendly, plain Australian English using first names only?\n- [ ] No placement approvals, fee waivers, or insurance confirmations made, and no invented College policies?\nIf anything fails, fix it and check again before showing me. Display the completed checklist at the bottom of your response."
+            }
+        ];
+
+        let selectedAppId = null;
+
+        /**
+         * Renders the list of Principles in the sidebar navigation.
+         */
+        function renderSidebar() {
+            const sidebar = document.getElementById('app-sidebar');
+            const ul = document.createElement('ul');
+            ul.className = 'space-y-2';
+
+            appData.forEach(app => {
+                const li = document.createElement('li');
+                li.id = `app-item-${app.id}`;
+                const active = app.id === selectedAppId;
+
+                // Default text is white; hover and active states use dark-primary so currentColor icons shift cleanly
+                li.className = 'cursor-pointer p-3 rounded-lg transition duration-200 ease-in-out flex items-center space-x-3 shadow-sm ' +
+                    (active
+                        ? 'bg-highlight-cyan text-dark-primary hover:bg-highlight-cyan hover:text-dark-primary shadow-md'
+                        : 'text-white hover:bg-light-secondary-bg hover:text-dark-primary');
+
+                li.setAttribute('role', 'button');
+                li.setAttribute('tabindex', '0');
+
+                li.innerHTML = `
+                    <div class="w-6 h-6 flex-shrink-0">
+                        ${app.iconSvg}
+                    </div>
+                    <div class="flex-grow">
+                        <span class="font-bold text-base">${app.appNumber}. ${app.title}</span>
+                    </div>
+                `;
+
+                li.addEventListener('click', () => selectApp(app.id));
+                li.addEventListener('keydown', e => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        selectApp(app.id);
+                    }
+                });
+                ul.appendChild(li);
+            });
+
+            // Clear previous list items while preserving the sidebar heading
+            const appIndexTitle = sidebar.querySelector('h2');
+            sidebar.innerHTML = '';
+            sidebar.appendChild(appIndexTitle);
+            sidebar.appendChild(ul);
+        }
+
+        /**
+         * Copies text to clipboard using document.execCommand('copy') with navigator fallback.
+         * @param {string} text - The prompt text to copy.
+         * @param {HTMLElement} btnElement - The button element to update status text on.
+         */
+        function copyPromptText(text, btnElement) {
+            const showCopied = () => {
+                btnElement.textContent = 'Copied!';
+                setTimeout(() => {
+                    btnElement.textContent = 'Copy';
+                }, 1500);
+            };
+
+            const fallbackCopy = () => {
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-9999px';
+                textArea.style.top = '0';
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showCopied();
+                } catch (err) {
+                    btnElement.textContent = 'Select & copy';
+                }
+                document.body.removeChild(textArea);
+            };
+
+            try {
+                fallbackCopy();
+            } catch (error) {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(showCopied, () => {
+                        btnElement.textContent = 'Select & copy';
+                    });
+                }
+            }
+        }
+
+        /**
+         * Updates the main content area with details of the selected Principle.
+         * @param {number} id - The ID of the selected item.
+         */
+        function selectApp(id) {
+            const app = appData.find(a => a.id === id);
+            if (!app) return;
+
+            selectedAppId = id;
+
+            const titleElement = document.getElementById('content-title');
+            const bodyElement = document.getElementById('content-body');
+
+            // Display "Principle X: Title" for 1-9, and "10. The complete agent prompt" for item 10
+            titleElement.textContent = app.id === 10
+                ? `${app.appNumber}. ${app.title}`
+                : `Principle ${app.appNumber}: ${app.title}`;
+
+            const topCardHeading = app.id === 10 ? "How to set up your agent" : "What it means for College Admin";
+            const bottomCardHeading = app.id === 9
+                ? "Test prompts to try"
+                : (app.id === 10 ? "Complete Agent Instructions (Ready to copy)" : "Example prompt: Work Placement Readiness Assistant");
+
+            // Render both the explanation card and the example prompt card
+            bodyElement.innerHTML = `
+                <!-- Top Card: Principle Explanation - BG uses #d2f0f0 (light-aqua-bg), border uses #00bec7 (highlight-cyan) -->
+                <div class="bg-light-aqua-bg p-4 md:p-6 rounded-xl border-4 border-highlight-cyan shadow-inner mb-6">
+                    <h3 class="text-lg md:text-xl font-bold text-dark-primary mb-2">
+                        ${topCardHeading}
+                    </h3>
+                    <p class="text-dark-primary text-base md:text-lg leading-relaxed">
+                        ${app.content}
+                    </p>
+                </div>
+
+                <!-- Bottom Card: Example Prompt for the Agent - BG uses white, border uses #00bec7 (highlight-cyan) -->
+                <div class="bg-content-bg p-4 md:p-6 rounded-xl border-4 border-highlight-cyan shadow-inner">
+                    <h3 class="text-lg font-bold text-dark-secondary mb-3 flex items-center justify-between gap-2">
+                        <span class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-dark-secondary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            <span>${bottomCardHeading}</span>
+                        </span>
+                        <button id="copy-btn" type="button" class="flex-shrink-0 text-sm font-medium px-3 py-1 rounded-lg bg-highlight-cyan text-dark-primary hover:bg-light-secondary-bg transition-colors duration-200 shadow-sm">Copy</button>
+                    </h3>
+                    <div class="bg-page-bg p-4 rounded-lg border border-neutral-gray">
+                        <pre id="example-text" class="text-dark-primary text-base whitespace-pre-wrap font-sans leading-relaxed"></pre>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('example-text').textContent = app.example;
+            document.getElementById('copy-btn').addEventListener('click', e => {
+                copyPromptText(app.example, e.currentTarget);
+            });
+
+            // Re-render sidebar to update the active state
+            renderSidebar();
+        }
+
+        // Initialize the app on window load
+        window.onload = function() {
+            renderSidebar();
+            // Select the first principle by default to display content immediately
+            if (appData.length > 0) {
+                selectApp(appData[0].id);
+            }
+        };
+    </script>
+</body>
+</html>
